@@ -1,0 +1,51 @@
+on cali
+    mount_all /vendor/etc/fstab.cali
+    mount tmpfs tmpfs /data mode=0777
+
+    trigger load_persist_props_action
+
+    setprop sys.usb.configfs 1
+
+    trigger cali-fs
+    trigger cali-start
+
+on cali-fs
+    chmod 0775 /mnt/vendor
+    chown system system /mnt/vendor
+    chmod 0771 /data
+
+    mkdir /data/vendor 0751 root root
+    mkdir /data/vendor/local 0751 root root
+    mkdir /data/vendor/local/media 0770 audioserver system
+
+    mkdir /data/vendor/local/mlogservice 0770 shell system
+    # Tab A8 code for SR-SL6215-01-605 by sunxunou at 2021/08/05 start
+    mkdir /mnt/persist 0700 system system
+    mkdir /efs 0700 system system
+    mkdir /mnt/vendor_efs 0700 system system
+    # Tab A8 code for SR-SL6215-01-605 by sunxunou at 2021/08/05 end
+
+    chmod 0660 /sys/power/wakeup_count
+
+    # Tab A8 code for SR-SL6215-01-605 by sunxunou at 2021/08/05 start
+    chown system system /mnt/persist
+    chmod 0777 /mnt/persist
+    restorecon_recursive /mnt/persist
+
+    chown system system /mnt/vendor_efs
+    chmod 0777 /mnt/vendor_efs
+    restorecon_recursive /mnt/vendor_efs
+
+    chown system system /efs
+    chmod 0777 /efs
+    restorecon_recursive /efs
+    # Tab A8 code for SR-SL6215-01-605 by sunxunou at 2021/08/05 end
+
+on cali-start
+    class_start cali
+    start vendor.audio-hal-2-0
+    start vendor.engpcclientlte
+    start vendor.modem_control
+    start vendor.refnotify
+    start console
+    start system_suspend

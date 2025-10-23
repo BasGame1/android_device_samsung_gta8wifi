@@ -1,0 +1,86 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+sh_binary {
+    name: "log_to_csv.sh",
+    src: "bin/log_to_csv.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "loading.sh",
+    src: "bin/loading.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "para.sh",
+    src: "bin/para.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "total.sh",
+    src: "bin/total.sh",
+    vendor: true,
+}
+
+sh_binary {
+    name: "install-recovery.sh",
+    src: "bin/install-recovery.sh",
+    vendor: true,
+}
+
+// Init configuration files
+prebuilt_etc {
+    name: "init.cali.rc",
+    src: "etc/init.cali.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.factorytest.rc",
+    src: "etc/init.factorytest.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.gta8wifi.rc",
+    src: "etc/init.gta8wifi.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.storage.rc",
+    src: "etc/init.storage.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.ums512_25c10.rc",
+    src: "etc/init.ums512_25c10.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.ums512_25c10.usb.rc",
+    src: "etc/init.ums512_25c10.usb.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+// fstab
+prebuilt_etc {
+    name: "fstab.enableswap",
+    src: "etc/fstab.enableswap",
+    vendor: true,
+}

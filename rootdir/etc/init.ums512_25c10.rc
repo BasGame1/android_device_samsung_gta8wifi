@@ -1,0 +1,79 @@
+import /vendor/etc/init/hw/init.${ro.hardware}.usb.rc
+import /vendor/etc/init/hw/init.ram.rc
+import /vendor/etc/init/hw/init.storage.rc
+import /vendor/etc/init/hw/init.cali.rc
+import /vendor/etc/init/hw/init.factorytest.rc
+# Samsung product-specific init.rc
+import /vendor/etc/init/hw/init.${ro.product.device}.rc
+
+on init
+    start watchdogd
+    symlink /dev/block/by-name/param /dev/block/param
+    symlink /dev/block/by-name/steady /dev/block/steady
+    symlink /dev/block/by-name/persistent /dev/block/persistent
+
+on post-fs
+    chown system system /dev/grdm
+    chmod 660 /dev/grdm
+
+on post-fs-data
+    setprop vold.post_fs_data_done 1
+    # setprop debug.sf.latch_unsignaled 1
+
+# Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
+service watchdogd /system/bin/watchdogd 10 30
+    class core
+    oneshot
+    seclabel u:r:watchdogd:s0
+on boot
+# for devfreq mm
+    chmod 660 /sys/class/devfreq/isp-dvfs/isp_governor/set_work_freq
+    chown cameraserver system /sys/class/devfreq/isp-dvfs/isp_governor/set_work_freq
+    chmod 660 /sys/class/devfreq/dcam-if-dvfs/dcam-if_governor/set_work_freq
+    chown cameraserver system /sys/class/devfreq/dcam-if-dvfs/dcam-if_governor/set_work_freq
+    chmod 660 /sys/class/devfreq/isp-dvfs/isp_governor/set_work_index
+    chown cameraserver system /sys/class/devfreq/isp-dvfs/isp_governor/set_work_index
+    chmod 660 /sys/class/devfreq/dcam-if-dvfs/dcam-if_governor/set_work_index
+    chown cameraserver system /sys/class/devfreq/dcam-if-dvfs/dcam-if_governor/set_work_index
+    chmod 660 /sys/class/devfreq/isp-dvfs/isp_governor/set_hw_dvfs_en
+    chown cameraserver system /sys/class/devfreq/isp-dvfs/isp_governor/set_hw_dvfs_en
+    chmod 660 /sys/class/devfreq/fd-dvfs/fd_governor/set_work_index
+    chown cameraserver system /sys/class/devfreq/fd-dvfs/fd_governor/set_work_index
+# Tab A8 code for SR-AX6300-01-413 by zhumengnan at 2021/09/14 start
+# change grdm node permission
+#    chown system system /dev/grdm
+#    chmod 660 /dev/grdm
+# Tab A8 code for SR-AX6300-01-413 by zhumengnan at 2021/09/14 end
+# Tab A8 code for P231021-03566 by zhangzhihao at 2023/11/13 start
+    chown system radio /sys/class/sec/afc/afc_disable
+# Tab A8 code for P231021-03566 by zhangzhihao at 2023/11/13 end
+# HS03 code for SL6215DEV-456 by chenweibing at 2021/08/25 start
+service hqreadsvc /vendor/bin/hqread atcmd
+    class main
+    user root
+    disabled
+    oneshot
+    group root system bluetooth wifi
+    seclabel u:r:hqread:s0
+
+on boot
+    chmod 0770 /mnt/vendor/persist/flag
+    chmod 0770 /mnt/persist/flag
+
+on property:sys.boot_completed=1
+    setprop sys.hqread.trigger 1
+
+on property:sys.hqread.trigger=1
+    start hqreadsvc
+
+service hqcpsnbinsvc /system/bin/hqcpsnbin
+    class main
+    user root
+    disabled
+    oneshot
+    group root system audio
+    seclabel u:r:hqcopy:s0
+
+on property:sys.at.cpsnbin=1
+    start hqcpsnbinsvc
+# HS03 code for SL6215DEV-456 by chenweibing at 2021/08/25 end
