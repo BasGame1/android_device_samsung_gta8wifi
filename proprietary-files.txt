@@ -111,8 +111,6 @@ vendor/bin/hw/android.hardware.drm@1.3-service.clearkey
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
 vendor/etc/init/android.hardware.drm@1.3-service.clearkey.rc
 vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.clearkey.xml
--vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 
 # DRM-Widevine
 
@@ -206,14 +204,12 @@ vendor/lib64/vendor.samsung.hardware.gnss@2.0.so
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service.trusty
 vendor/etc/init/android.hardware.gatekeeper@1.0-service.trusty.rc
--vendor/etc/vintf/manifest/android.hardware.gatekeeper@1.0-service.trusty.xml
 
 # Graphics
 
 # Health
 vendor/bin/hw/android.hardware.health@2.1-service-samsung
 vendor/etc/init/android.hardware.health@2.1-service-samsung.rc
--vendor/etc/vintf/manifest/android.hardware.health@2.1-samsung.xml
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service
@@ -250,8 +246,6 @@ vendor/bin/hw/android.hardware.power.stats@1.0-service.mock
 vendor/bin/hw/vendor.unisoc.hardware.power-service
 vendor/etc/init/android.hardware.power.stats@1.0-service.rc
 vendor/etc/init/vendor-power-default.rc
--vendor/etc/vintf/manifest/android.hardware.power.stats@1.0-service-mock.xml
--vendor/etc/vintf/manifest/vendor-power-default.xml
 
 # QMI
 
@@ -262,7 +256,6 @@ system_ext/lib64/vendor.unisoc.hardware.radio.modem-V1-ndk.so
 vendor/lib64/vendor.sprd.hardware.radio@1.0.so
 
 # Radio-IMS
--app/ImsSettings/ImsSettings.apk
 
 # Samsung
 vendor/apex/com.samsung.android.camera.unihal.signed.apex
@@ -280,25 +273,9 @@ vendor/bin/hw/vendor.samsung.hardware.tlc.kg@1.1-service
 vendor/bin/hw/vendor.samsung.hardware.wifi@2.0-service
 vendor/bin/vendor.samsung.hardware.security.engmode@1.0-service
 vendor/bin/vendor.samsung.hardware.security.vaultkeeper@2.0-service
-vendor/etc/init/samsung.software.media.c2@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.hqm@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.miscpower@2.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.security.drk@2.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.security.engmode@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.security.sem@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.security.widevine.keyprov-service.rc
-vendor/etc/init/vendor.samsung.hardware.sysinput@1.2-service.rc
-vendor/etc/init/vendor.samsung.hardware.tlc.iccc@1.0-service.rc
-vendor/etc/init/vendor.samsung.hardware.tlc.kg@1.1-service.rc
-vendor/etc/init/vendor.samsung.hardware.wifi@2.0-service.rc
 vendor/etc/seccomp_policy/samsung.software.media.c2-base-policy
 vendor/etc/seccomp_policy/samsung.software.media.c2-ext-policy
--vendor/etc/vintf/manifest/vendor.samsung.hardware.hqm@1.0-manifest.xml
--vendor/etc/vintf/manifest/vendor.samsung.hardware.security.widevine.keyprov-service.xml
--vendor/etc/vintf/manifest/vendor.samsung.hardware.tlc.iccc@1.0-manifest.xml
--vendor/etc/vintf/manifest/vendor.samsung.hardware.tlc.kg@1.1-manifest.xml
--vendor/etc/vintf/manifest/vendor.samsung.hardware.wifi.hostapd.xml
--vendor/etc/vintf/manifest/vendor.samsung.hardware.wifi@2.0-service.xml
+
 vendor/lib64/vendor.samsung.hardware.hyper-V2-ndk_platform.so
 vendor/lib64/vendor.samsung.hardware.miscpower@2.0.so
 vendor/lib64/vendor.samsung.hardware.security.drk@2.0.so
@@ -328,8 +305,6 @@ vendor/bin/thermald
 vendor/etc/init/thermald.rc
 vendor/etc/init/vendor.sprd.hardware.thermal@2.0-service.rc
 vendor/etc/thermal.conf
--vendor/etc/vintf/manifest/android.hardware.thermal@2.0-service.xml
--vendor/etc/vintf/manifest/vendor.sprd.hardware.thermal@2.0-service.xml
 vendor/lib64/hw/vendor.sprd.hardware.thermal@2.0-impl.so
 vendor/lib64/vendor.sprd.hardware.thermal@1.0.so
 vendor/lib64/vendor.sprd.hardware.thermal@2.0.so
@@ -341,11 +316,7 @@ vendor/lib64/vendor.sprd.hardware.thermal@2.0.so
 # Vibrator
 
 # WiFi
-vendor/bin/hw/android.hardware.wifi@1.0-service
-vendor/etc/init/android.hardware.wifi.supplicant-service.rc
-vendor/etc/init/android.hardware.wifi@1.0-service.rc
--vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
--vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
+vendor/bin/hw/android.hardware.wifi@1.0-services
 
 # Misc
 system_ext/apex/com.android.vndk.v30.apex
@@ -376,21 +347,6 @@ system_ext/etc/decompress.py
 system_ext/etc/fs_config_dirs
 system_ext/etc/fs_config_files
 system_ext/etc/group
-system_ext/etc/init/autotest_system.rc
-system_ext/etc/init/cmd_services.rc
-system_ext/etc/init/data_rps.rc
-system_ext/etc/init/ext_data.rc
-system_ext/etc/init/ims_bridged.rc
-system_ext/etc/init/init_gms.rc
-system_ext/etc/init/linkturbonative.rc
-system_ext/etc/init/minidumpd.rc
-system_ext/etc/init/modemlog_connmgr_service.rc
-system_ext/etc/init/netbox.rc
-system_ext/etc/init/nhMonitorService.rc
-system_ext/etc/init/slogmodem.rc
-system_ext/etc/init/sprd_networkcontrol.rc
-system_ext/etc/init/srmi_proxyd.rc
-system_ext/etc/init/tiny_firewall.rc
 system_ext/etc/models/mnasnet_1.3_224.tflite
 system_ext/etc/models/mnasnet_1.3_224.txt
 system_ext/etc/perflink_version.xml
@@ -429,17 +385,6 @@ system_ext/etc/profiles/com.google.android.youtube.prof
 system_ext/etc/profiles/default.prof
 system_ext/etc/vilte/vertical_480.raw
 system_ext/etc/wmshell.protolog.json.gz
--system_ext/framework/androidx.window.extensions.jar
--system_ext/framework/androidx.window.sidecar.jar
--system_ext/framework/smartlink_sdk.jar
--system_ext/priv-app/AccessibilityMenu/AccessibilityMenu.apk
--system_ext/priv-app/CarrierConfig/CarrierConfig.apk
--system_ext/priv-app/GoogleFeedback/GoogleFeedback.apk
--system_ext/priv-app/GoogleServicesFramework/GoogleServicesFramework.apk
--system_ext/priv-app/SetupWizard/SetupWizard.apk
--system_ext/priv-app/StorageManager/StorageManager.apk
--system_ext/priv-app/SystemUI/SystemUI.apk
--system_ext/priv-app/WallpaperCropper/WallpaperCropper.apk
 vendor/atcmdlist
 vendor/bin/applypatch
 vendor/bin/audiodumpclient
@@ -613,50 +558,6 @@ vendor/etc/hqm_device.xml
 vendor/etc/hyper/config_chipset.json
 vendor/etc/hyper/config_hyper_permission.json
 vendor/etc/hyper/config_vendor.json
-vendor/etc/init/autotest.rc
-vendor/etc/init/boringssl_self_test.rc
-vendor/etc/init/camera.rc
-vendor/etc/init/connmgr.rc
-vendor/etc/init/cp_diskserver.rc
-vendor/etc/init/dcxsrv.rc
-vendor/etc/init/emservice.rc
-vendor/etc/init/engpc.rc
-vendor/etc/init/factorytest.rc
-vendor/etc/init/hyper-default-sec.rc
-vendor/etc/init/init.gps.rc
-vendor/etc/init/init.leddrv.rc
-vendor/etc/init/init.md.rc
-vendor/etc/init/init.ramplus.rc
-vendor/etc/init/init.sprd_flash.rc
-vendor/etc/init/init.sprd_vdsp.rc
-vendor/etc/init/init.vendor.sysfw.rc
-vendor/etc/init/init.vibdrv.rc
-vendor/etc/init/lights-default-sec.rc
-vendor/etc/init/mlogservice.rc
-vendor/etc/init/modem_control.rc
-vendor/etc/init/nhMonitorCtrl.rc
-vendor/etc/init/phasecheckserver.rc
-vendor/etc/init/rebootescrow-default.rc
-vendor/etc/init/rpmbserver_androidr.rc
-vendor/etc/init/slogmodem_vendor.rc
-vendor/etc/init/storageproxyd_androidr_gp.rc
-vendor/etc/init/systemDebuggerd.rc
-vendor/etc/init/tee_rpc.rc
-vendor/etc/init/tsupplicant.rc
-vendor/etc/init/vaultkeeper_common.rc
-vendor/etc/init/vendor.ril.wifionly.qcom.rc
-vendor/etc/init/vendor.sprd.hardware.athuaqin@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.broadcastradio@2.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.connmgr@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.cplog_connmgr@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.cplog_svc@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.enhance@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.log@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.network@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.trusty@1.0-service.rc
-vendor/etc/init/vendor.sprd.hardware.wcn@1.0-service.rc
-vendor/etc/init/vendor_flash_recovery.rc
-vendor/etc/init/wcn.rc
 vendor/etc/lmkd_param.conf
 vendor/etc/mlogservice.conf
 vendor/etc/modem_cp_info.xml
