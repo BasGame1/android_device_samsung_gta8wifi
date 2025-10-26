@@ -241,7 +241,6 @@ vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so
 # Postprocessing
 
 # Power-Hardware
-system_ext/lib64/vendor.unisoc.hardware.power-V1-ndk.so
 vendor/bin/hw/android.hardware.power.stats@1.0-service.mock
 vendor/bin/hw/vendor.unisoc.hardware.power-service
 vendor/etc/init/android.hardware.power.stats@1.0-service.rc
@@ -250,9 +249,6 @@ vendor/etc/init/vendor-power-default.rc
 # QMI
 
 # Radio
-system_ext/lib64/vendor.unisoc.hardware.radio-V1-ndk.so
-system_ext/lib64/vendor.unisoc.hardware.radio.lite-V1-ndk.so
-system_ext/lib64/vendor.unisoc.hardware.radio.modem-V1-ndk.so
 vendor/lib64/vendor.sprd.hardware.radio@1.0.so
 
 # Radio-IMS
@@ -316,75 +312,8 @@ vendor/lib64/vendor.sprd.hardware.thermal@2.0.so
 # Vibrator
 
 # WiFi
-vendor/bin/hw/android.hardware.wifi@1.0-services
 
 # Misc
-system_ext/apex/com.android.vndk.v30.apex
-system_ext/bin/apdumper
-system_ext/bin/cmd_services
-system_ext/bin/data_rps.sh
-system_ext/bin/ext_data
-system_ext/bin/hcidump
-system_ext/bin/ims_bridged
-system_ext/bin/inotifywait
-system_ext/bin/inotifywatch
-system_ext/bin/iperf
-system_ext/bin/linkturbonative
-system_ext/bin/minidumpd
-system_ext/bin/modemlog_connmgr_service
-system_ext/bin/netbox.sh
-system_ext/bin/net_bpf_progs
-system_ext/bin/nhMonitorService
-system_ext/bin/sfpd
-system_ext/bin/sgm.cpu_memory
-system_ext/bin/slogmodem
-system_ext/bin/sprd_networkcontrol
-system_ext/bin/srmi_proxyd
-system_ext/bin/tiny_firewall.sh
-system_ext/bin/wcn_check
-system_ext/etc/build.prop
-system_ext/etc/decompress.py
-system_ext/etc/fs_config_dirs
-system_ext/etc/fs_config_files
-system_ext/etc/group
-system_ext/etc/models/mnasnet_1.3_224.tflite
-system_ext/etc/models/mnasnet_1.3_224.txt
-system_ext/etc/perflink_version.xml
-system_ext/etc/permissions/androidx.window.extensions.xml
-system_ext/etc/permissions/androidx.window.sidecar.xml
-system_ext/etc/permissions/com.android.carrierconfig.xml
-system_ext/etc/permissions/com.android.storagemanager.xml
-system_ext/etc/permissions/com.android.systemui.xml
-system_ext/etc/permissions/com.android.telephony.wifiordataonly.xml
-system_ext/etc/permissions/com.samsung.systemui.xml
-system_ext/etc/permissions/privapp-permissions-google-system_ext.xml
-system_ext/etc/permissions/smartlink_sdk.xml
-system_ext/etc/permissions/unavailable-se-feature.xml
-system_ext/etc/profiles/com.android.chrome.prof
-system_ext/etc/profiles/com.eg.android.AlipayGphone.prof
-system_ext/etc/profiles/com.google.android.apps.maps.prof
-system_ext/etc/profiles/com.google.android.apps.messaging.prof
-system_ext/etc/profiles/com.google.android.apps.nbu.files.prof
-system_ext/etc/profiles/com.google.android.apps.photos.prof
-system_ext/etc/profiles/com.google.android.apps.photosgo.prof
-system_ext/etc/profiles/com.google.android.apps.wellbeing.prof
-system_ext/etc/profiles/com.google.android.apps.youtube.music.prof
-system_ext/etc/profiles/com.google.android.calculator.prof
-system_ext/etc/profiles/com.google.android.calendar.prof
-system_ext/etc/profiles/com.google.android.contacts.prof
-system_ext/etc/profiles/com.google.android.deskclock.prof
-system_ext/etc/profiles/com.google.android.dialer.prof
-system_ext/etc/profiles/com.google.android.gm.prof
-system_ext/etc/profiles/com.google.android.gms.prof
-system_ext/etc/profiles/com.google.android.googlequicksearchbox.prof
-system_ext/etc/profiles/com.google.android.inputmethod.latin.prof
-system_ext/etc/profiles/com.google.android.tts.prof
-system_ext/etc/profiles/com.google.android.videos.prof
-system_ext/etc/profiles/com.google.android.webview.prof
-system_ext/etc/profiles/com.google.android.youtube.prof
-system_ext/etc/profiles/default.prof
-system_ext/etc/vilte/vertical_480.raw
-system_ext/etc/wmshell.protolog.json.gz
 vendor/atcmdlist
 vendor/bin/applypatch
 vendor/bin/audiodumpclient
@@ -524,7 +453,6 @@ vendor/etc/aiimg/front/BG_CAP_1_2.jpg
 vendor/etc/aiimg/front/BG_CAP_1_3.jpg
 vendor/etc/aiimg/front/BG_CAP_1_4.jpg
 vendor/etc/analyzer.py
-vendor/etc/audio/sku_sprd/primary_audio_policy_configuration.xml
 vendor/etc/BBAT.conf
 vendor/etc/blackAppList.xml
 vendor/etc/bt_configure_pskey.ini
