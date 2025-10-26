@@ -17,20 +17,22 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
-HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
+cp $ANDROID_ROOT/tools/extract-utils/templates/single-device/setup-makefiles.py $ANDROID_ROOT/tools/extract-utils/setup-makefiles.py
+
+HELPER="${ANDROID_ROOT}/tools/extract-utils/setup-makefiles.py"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
-source "${HELPER}"
+python3 "${HELPER}"
 
 # Initialize the helper
-setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
+#setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
 # Warning headers and guards
-write_headers
+#write_headers
 
-write_makefiles "${MY_DIR}/proprietary-files.txt" true
+#write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
-write_footers
+#write_footers
