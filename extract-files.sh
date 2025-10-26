@@ -17,6 +17,8 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ANDROID_ROOT="${MY_DIR}/../../.."
 
+cp $ANDROID_ROOT/tools/extract-utils/templates/single-device/extract-files.py $ANDROID_ROOT/tools/extract-utils/extract-files.py
+
 HELPER="$ANDROID_ROOT/tools/extract-utils/extract-files.py"
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
