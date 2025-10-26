@@ -22,7 +22,4 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung-ss
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="gta8wifixx-user 14 UP1A.231005.007 X200XXS6DYG6 release-keys"
-
 BUILD_FINGERPRINT := samsung/gta8wifixx/gta8wifi:14/UP1A.231005.007/X200XXS6DYG6:user/release-keys
