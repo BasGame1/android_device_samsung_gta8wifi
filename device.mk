@@ -14,7 +14,7 @@ PRODUCT_SHIPPING_API_LEVEL := 30
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \
     fastbootd
-
+    
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
@@ -50,6 +50,12 @@ PRODUCT_PACKAGES += \
     init.recovery.samsung.rc \
     init.recovery.ums512_25c10.rc \
     ueventd.ums512_25c10.rc \
+    
+# Exclude 32 bit libraries
+PRODUCT_PACKAGES_EXCLUDE_32BIT += \
+    vendor.samsung.hardware.biometrics.face@3.0 \
+    vendor.sprd.hardware.log-V1-ndk \
+    vendor.unisoc.hardware.power-V1-ndk
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.enableswap:$(TARGET_COPY_OUT_RAMDISK)/fstab.enableswap
