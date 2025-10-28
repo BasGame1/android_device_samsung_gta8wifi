@@ -30,6 +30,9 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # Product characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
+# Vendor
+PRODUCT_BUILD_VENDOR_IMAGE := true
+
 # Rootdir
 PRODUCT_PACKAGES += \
     log_to_csv.sh \
