@@ -38,7 +38,9 @@ BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := false
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilts/dtbo.img
-TARGET_KERNEL_CONFIG := gta8wifi_eur_open_defconfig
+#TARGET_KERNEL_CONFIG := gta8wifi_eur_open_defconfig
+TARGET_KERNEL_CONFIG := gta8wifi_vintf_fixed_defconfig
+BOARD_KERNEL_AUTO_CONFIG_UPDATE := false
 TARGET_KERNEL_SOURCE := kernel/samsung/gta8wifi
 
 # Partitions
@@ -115,5 +117,12 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vendor
 
+# Assuming 'check_vintf_all' or similar target depends on kernel compilation finish
+# We target $(INSTALLED_KERNEL_TARGET) as it's usually built before VINTF check.
+# We add our custom command as a prerequisite to a common target built early.
+# $(TARGET_KERNEL_CONFIG): Represents the config generation step. Let's run after it.
+$(INSTALLED_KERNEL_TARGET): $(TARGET_KERNEL_CONFIG)
+	$(call force_kernel_configs)
+	
 # Inherit the proprietary files
 include vendor/samsung/gta8wifi/BoardConfigVendor.mk
