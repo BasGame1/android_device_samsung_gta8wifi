@@ -68,8 +68,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Compatibility matrix
-DEVICE_COMPATIBILITY_MATRIX_FILE := \
-    $(LOCAL_PATH)/compatibility_matrix.device.xml
+DEVICE_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.device.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := $(LOCAL_PATH)/compatibility_matrix.framework.xml
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/samsung/gta8wifi/gta8wifi-vendor.mk)
